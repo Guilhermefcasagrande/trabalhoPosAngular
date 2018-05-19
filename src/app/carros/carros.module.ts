@@ -5,11 +5,13 @@ import { CarrosRoutingModule } from './carros-routing.module';
 import { CrudComponent } from './crud/crud.component';
 import { ListaComponent } from './lista/lista.component';
 import { EditaComponent } from './edita/edita.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    CarrosRoutingModule
+    CarrosRoutingModule,
+    FormsModule
   ],
   declarations: [CrudComponent, ListaComponent, EditaComponent]
 })

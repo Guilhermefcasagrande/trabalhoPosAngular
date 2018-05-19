@@ -1,3 +1,29 @@
+<form (ngSubmit)="onSubmit(form)" novalidate #form="ngForm">
+  <div class="form-group">
+    <label>Marca</label>
+    <input type="text" [(ngModel)]="item.marca" name="marca"  #marcaField="ngModel" required>
+    <p *ngIf="marcaField.touched && marcaField.invalid" class="alert alert-danger">Marca é obrigatório</p>
+  </div>
+  <div class="form-group">
+    <label>Modelo</label>
+    <input type="text" [(ngModel)]="item.modelo" name="modelo"  #modeloField="ngModel" required>
+    <p *ngIf="modeloField.touched && modeloField.invalid" class="alert alert-danger">Modelo é obrigatório</p>
+  </div>
+  <div class="form-group">
+    <label>Ano</label>
+    <input type="text" [(ngModel)]="item.ano" name="ano"  #anoField="ngModel" required>
+    <p *ngIf="anoField.touched && anoField.invalid" class="alert alert-danger">Ano é obrigatório</p>
+  </div>
+  <div class="form-group">
+    <label>Imagem URL</label>
+    <input type="text" [(ngModel)]="item.imagem_url" name="imagem_url"  #imagem_urlField="ngModel" required>
+    <p *ngIf="imagem_urlField.touched && imagem_urlField.invalid" class="alert alert-danger">Imagem URL é obrigatório</p>
+  </div>
+  <img src="{{ item.imagem_url }}" width="150" height="100">
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Salvar</button>
+</form>
+
 <p>
-  edita works!
+  {{item|json}}
+
 </p>
